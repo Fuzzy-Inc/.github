@@ -55,8 +55,8 @@ body:
   - type: textarea
     id: alternatives
     attributes:
-      label: Aleternatives 
-      description: What alernatives solutions are there, and what was discussed?
+      label: Alternatives 
+      description: What alternatives solutions are there, and what was discussed?
     validations:
       required: true
 
