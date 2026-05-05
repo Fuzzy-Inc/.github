@@ -1,0 +1,78 @@
+name: ADR
+description: Track an Architecture Decision Record as a living issue — from proposal through to acceptance.
+title: "[adr] ADR-XXX: "
+labels: ["adr"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Title format
+        `[adr] ADR-XXX: Short decision title`
+        
+        **Example:** `[adr] ADR-001: Example descion `
+        
+        The ADR document itself lives in `docs/adr/`. This issue tracks its status and provides a discussion surface.
+        Once the ADR is accepted and merged, close this issue and link the merged file.
+
+  - type: input
+    id: adr-doc
+    attributes:
+      label: ADR Document
+      description: Link to the ADR file in the repo once it exists.
+      placeholder: "e.g. docs/adr/ADR-001-example.md"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - Proposed
+        - In Review
+        - Accepted
+        - Superseded
+        - Rejected
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What situation or constraint is driving this decision?
+    validations:
+      required: true
+
+  - type: textarea
+    id: decision
+    attributes:
+      label: Decision
+      description: What has been decided, or what is being proposed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Aleternatives 
+      description: What alernatives solutions are there, and what was discussed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Pros/Cons
+      description: Pros and Cons of the decison. What does this decision make easier? What does it make harder? What debt does it accept?
+    validations:
+      required: true
+
+  - type: textarea
+    id: supersedes
+    attributes:
+      label: Supersedes / Related
+      description: Does this ADR supersede an earlier one? Are there related ADRs or issues?
+      placeholder: "e.g. Supersedes ADR-002 (implementation notes only). Related: #13, #14."
+    validations:
+      required: false
