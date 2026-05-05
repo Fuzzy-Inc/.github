@@ -1,0 +1,38 @@
+name: Chore
+description: Housekeeping, maintenance, or technical debt that delivers no user-visible change.
+title: "[chore](scope):"
+labels: ["chore"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Title format
+        `[chore](scope): Short descriptive title`
+        
+        **Example:** `[chore](services/auth): Deduplicate Better Auth migration files`
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What needs doing and why? What is the current state and what is the desired state?
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Tasks
+      placeholder: |
+        - [ ] Task one
+        - [ ] Task two
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of Done
+      description: How do we know this chore is complete?
+    validations:
+      required: true
