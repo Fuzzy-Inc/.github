@@ -76,3 +76,4 @@ body:
       placeholder: "e.g. Supersedes ADR-002 (implementation notes only). Related: #13, #14."
     validations:
       required: false
+
