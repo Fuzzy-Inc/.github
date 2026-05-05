@@ -1,0 +1,55 @@
+name: Question
+description: An open question or discussion point that needs a decision or alignment before work can proceed.
+title: "[question](scope):"
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Title format
+        `[question](scope): Short descriptive title`
+        
+        **Example:** `[question](services/bff): Should JWKS cache TTL be configurable per environment?`
+        
+        If this question requires investigation rather than just a decision, open a Discovery ticket instead.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What is the background? Why does this question need answering now?
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: State the question clearly and specifically.
+    validations:
+      required: true
+
+  - type: textarea
+    id: options
+    attributes:
+      label: Options Considered
+      description: If you have already identified possible answers, list them here with their tradeoffs.
+      placeholder: |
+        **Option A — ...**
+        Pros: ...
+        Cons: ...
+
+        **Option B — ...**
+        Pros: ...
+        Cons: ...
+    validations:
+      required: false
+
+  - type: input
+    id: blocks
+    attributes:
+      label: Blocks
+      description: What cannot proceed until this is resolved?
+      placeholder: "e.g. (services/bff)[1.8], or — nothing yet"
+    validations:
+      required: false
