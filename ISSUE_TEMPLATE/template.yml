@@ -1,0 +1,18 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Report a Bug
+    url: https://github.com/Fuzzy-Inc/.github/issues/new?template=bug.yml
+    about: Something is broken
+  - name: Create a Story
+    url: https://github.com/Fuzzy-Inc/.github/issues/new?template=story.yml
+    about: Unit of work under an epic
+  - name: Start a Discovery
+    url: https://github.com/Fuzzy-Inc/.github/issues/new?template=discovery.yml
+    about: Research spike or investigation
+  - name: Ask a Question
+    url: https://github.com/Fuzzy-Inc/.github/issues/new?template=question.yml
+    about: Get help or clarification on something
+  - name: Create an ADR 
+    url: https://github.com/Fuzzy-Inc/.github/issues/new?template=adr.yml
+    about: Create a new architectural decision record
+  
