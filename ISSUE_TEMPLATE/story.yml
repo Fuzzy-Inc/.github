@@ -1,0 +1,85 @@
+name: Story
+description: A unit of deliverable work under an epic. Scoped to a single service, package, or app.
+title: "[story](scope)[epic.story]: "
+labels: ["story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Title format
+        `[story](scope)[epic.story]: Short descriptive title`
+        
+        The scope reflects where this work lives — `services/auth`, `services/bff`, `apps/web`, `packages/ui` etc.
+        The epic number matches the parent epic. The story number is sequential across the whole epic regardless of scope.
+        
+        **Example:** `[story](services/bff)[1.9]: Implement JWT validation middleware with tokenType branching`
+
+  - type: input
+    id: epic
+    attributes:
+      label: Parent Epic
+      description: Link to the parent epic issue.
+      placeholder: "e.g. #42 — [epic](services/auth)[1.0] JWT Authentication Architecture"
+    validations:
+      required: true
+
+  - type: input
+    id: blocked-by
+    attributes:
+      label: Blocked By
+      description: Story numbers or issue links this story cannot start until resolved.
+      placeholder: "e.g. 1.1, 1.2 — or — if none, leave blank"
+    validations:
+      required: false
+
+  - type: input
+    id: blocks
+    attributes:
+      label: Blocks
+      description: Story numbers or issue links that cannot start until this story is done.
+      placeholder: "e.g. 1.4, 1.5 — or — if none, leave blank"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is this story delivering and why? Keep it to the outcome, not the task list.
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes / Risks
+      description: Open questions, known risks, coupling decisions, or anything that needs to be verified before implementation starts.
+      placeholder: |
+        > **Before implementing:** Verify X against Y source — this is a hard gate on this story.
+    validations:
+      required: false
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Tasks
+      description: Atomic, implementable steps. Each should be completable in a single sitting.
+      placeholder: |
+        - [ ] Task one
+        - [ ] Task two
+        - [ ] Write test: ...
+        - [ ] Write test: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Verifiable outcomes that define done. These should be testable, not subjective.
+      placeholder: |
+        - Outcome one is true
+        - Outcome two is true
+        - No regression on X
+    validations:
+      required: true
