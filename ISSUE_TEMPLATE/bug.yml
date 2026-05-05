@@ -1,0 +1,69 @@
+name: Bug
+description: Something is broken or behaving incorrectly.
+title: "[bug](scope): "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Title format
+        `[bug](scope): Short descriptive title`
+        
+        **Example:** `[bug](services/auth): personalWorkspace hook not firing on social sign-up`
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What is broken? What impact does it have?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: |
+        - Service version / commit:
+        - Node / runtime version:
+        - OS:
+        - Relevant env vars (redacted):
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - p0 — production down / data at risk
+        - p1 — major feature broken, no workaround
+        - p2 — degraded experience, workaround exists
+        - p3 — minor / cosmetic
+    validations:
+      required: true
