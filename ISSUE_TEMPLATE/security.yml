@@ -1,0 +1,68 @@
+name: Security
+description: A security concern, vulnerability, or compliance gap. For critical vulnerabilities, use GitHub's private vulnerability reporting instead.
+title: "[security](scope): "
+labels: ["security"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Title format
+        `[security](scope): Short descriptive title`
+        
+        **Example:** `[security](services/auth): Support token TTL not enforced on session revocation`
+        
+        > ⚠️ **Critical or exploitable vulnerabilities should not be filed here.**
+        > Use > Use [GitHub's private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) instead.
+        > This template is for **non-exploitable security concerns**, hardening work, and compliance gaps.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical — exploitable, use private reporting instead
+        - High — significant risk, no active exploit
+        - Medium — limited exposure or requires chained conditions
+        - Low — hardening / best practice gap
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Authentication / Authorisation
+        - Data exposure / PII
+        - Secrets management
+        - Dependency vulnerability
+        - Compliance gap (SOC 2 / ISO 27001)
+        - Hardening / defence in depth
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the concern. What is the current state and what is the risk?
+    validations:
+      required: true
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Potential Impact
+      description: What could an attacker do, or what compliance requirement is at risk?
+    validations:
+      required: true
+
+  - type: textarea
+    id: remediation
+    attributes:
+      label: Proposed Remediation
+      description: What change would address this? If unknown, leave blank and use a Discovery ticket.
+    validations:
+      required: false
+
