@@ -1,0 +1,67 @@
+name: Discovery
+description: A research spike or open question that needs investigation before a story or epic can be shaped.
+title: "[discovery](scope):"
+labels: ["discovery"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Title format
+        `[discovery](scope): Short descriptive title`
+        
+        **Example:** `[discovery](services/auth): Confirm BA ^1.5.1 private key decryption utility path`
+        
+        Discovery tickets are time-boxed. They produce an output — a decision, a doc, a follow-up issue — not a code change.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What situation or upcoming work is this discovery unblocking?
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question to Answer
+      description: State the specific question this spike needs to resolve. Keep it narrow.
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach
+    attributes:
+      label: Approach
+      description: How will the investigation be conducted? What sources, tools, or experiments will be used?
+    validations:
+      required: false
+
+  - type: input
+    id: timebox
+    attributes:
+      label: Timebox
+      description: Maximum time to spend before surfacing a result, even if inconclusive.
+      placeholder: "e.g. 2 hours, half a day"
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected Output
+      description: What does done look like? A comment on this issue, an ADR, a follow-up story, a doc update?
+      placeholder: |
+        - [ ] Finding documented as a comment on this issue
+        - [ ] Follow-up story opened if implementation is needed
+    validations:
+      required: true
+
+  - type: input
+    id: blocks
+    attributes:
+      label: Blocks
+      description: Story or epic that is waiting on the outcome of this discovery.
+      placeholder: "e.g. (services/auth)[1.7]"
+    validations:
+      required: false
